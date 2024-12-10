@@ -19,12 +19,11 @@ namespace MiEntity.Controllers
         // GET: api/Cabeceras
         public IQueryable<Cabecera> GetCabecera()
         {
-            //Expresiones Lambda
-            //var cabeceras = context.Cabecera.Where().ToList();
+            //Linq=>Expresiones Lambda
+            var cabeceras = context.Cabecera.Where(x=>x.Activo==true);
 
-
-            return context.Cabecera;
-            //return cabeceras;
+            //return context.Cabecera;
+            return cabeceras;
         }
 
         // GET: api/Cabeceras/5

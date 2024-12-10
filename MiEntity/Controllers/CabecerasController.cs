@@ -17,10 +17,10 @@ namespace MiEntity.Controllers
         private FacturaDBEntities context = new FacturaDBEntities();
 
         // GET: api/Cabeceras
-        public IQueryable<Cabecera> GetCabecera()
+        public IQueryable<Cabecera> GetCabecera(string cliente)
         {
             //Linq=>Expresiones Lambda
-            var cabeceras = context.Cabecera.Where(x=>x.Activo==true);
+            var cabeceras = context.Cabecera.Where(x=>x.Activo==true && x.Cliente.Contains(cliente));
 
             //return context.Cabecera;
             return cabeceras;
